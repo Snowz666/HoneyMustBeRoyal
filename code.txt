@@ -1,0 +1,651 @@
+using System;
+using System.Runtime.InteropServices;
+using BokuMono.Data;
+using Il2CppInterop.Common.Attributes;
+using Il2CppInterop.Runtime;
+using Il2CppInterop.Runtime.Runtime;
+using Il2CppSystem;
+using Il2CppSystem.Collections.Generic;
+
+namespace BokuMono
+{
+	// Token: 0x020004FE RID: 1278
+	public sealed class BeekeepingManager : ManagedSingleton<BeekeepingManager>
+	{
+		// Token: 0x060029D7 RID: 10711 RVA: 0x0014D160 File Offset: 0x0014B360
+		// Note: this type is marked as 'beforefieldinit'.
+		static BeekeepingManager()
+		{
+			Il2CppClassPointerStore<BeekeepingManager>.NativeClassPtr = IL2CPP.GetIl2CppClass("Assembly-CSharp.dll", "BokuMono", "BeekeepingManager");
+			IL2CPP.il2cpp_runtime_class_init(Il2CppClassPointerStore<BeekeepingManager>.NativeClassPtr);
+			BeekeepingManager.NativeFieldInfoPtr_m_HarvestFlowerInfos = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<BeekeepingManager>.NativeClassPtr, "m_HarvestFlowerInfos");
+			BeekeepingManager.NativeFieldInfoPtr_itemDataDic = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<BeekeepingManager>.NativeClassPtr, "itemDataDic");
+			BeekeepingManager.NativeFieldInfoPtr_extraItemDatas = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<BeekeepingManager>.NativeClassPtr, "extraItemDatas");
+			BeekeepingManager.NativeMethodInfoPtr_get_SingletonLifetime_Public_Virtual_get_SingletonLifetime_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<BeekeepingManager>.NativeClassPtr, 100669489);
+			BeekeepingManager.NativeMethodInfoPtr_get_Level_Public_get_BeekeepingLevel_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<BeekeepingManager>.NativeClassPtr, 100669490);
+			BeekeepingManager.NativeMethodInfoPtr_get_AccessableGroupList_Public_get_List_1_UInt32_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<BeekeepingManager>.NativeClassPtr, 100669491);
+			BeekeepingManager.NativeMethodInfoPtr_get_BS_Private_get_BeekeepingSetting_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<BeekeepingManager>.NativeClassPtr, 100669492);
+			BeekeepingManager.NativeMethodInfoPtr_get_GC_Private_get_GameController_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<BeekeepingManager>.NativeClassPtr, 100669493);
+			BeekeepingManager.NativeMethodInfoPtr_get_FM_Private_get_FieldManager_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<BeekeepingManager>.NativeClassPtr, 100669494);
+			BeekeepingManager.NativeMethodInfoPtr_get_MDM_Private_get_MasterDataManager_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<BeekeepingManager>.NativeClassPtr, 100669495);
+			BeekeepingManager.NativeMethodInfoPtr_ToSaveData_Public_SaveData_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<BeekeepingManager>.NativeClassPtr, 100669496);
+			BeekeepingManager.NativeMethodInfoPtr_FromSaveData_Public_Void_SaveData_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<BeekeepingManager>.NativeClassPtr, 100669497);
+			BeekeepingManager.NativeMethodInfoPtr_IsAccesableGroupId_Public_Boolean_UInt32_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<BeekeepingManager>.NativeClassPtr, 100669498);
+			BeekeepingManager.NativeMethodInfoPtr_IsHoneycombCollectable_Public_Boolean_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<BeekeepingManager>.NativeClassPtr, 100669499);
+			BeekeepingManager.NativeMethodInfoPtr_OnChangeField_Public_Void_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<BeekeepingManager>.NativeClassPtr, 100669500);
+			BeekeepingManager.NativeMethodInfoPtr_CollectHoneycomb_Public_Void_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<BeekeepingManager>.NativeClassPtr, 100669501);
+			BeekeepingManager.NativeMethodInfoPtr_AddCollectableFlowerInfo_Public_Void_HarvestFlowerInfo_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<BeekeepingManager>.NativeClassPtr, 100669502);
+			BeekeepingManager.NativeMethodInfoPtr_TryCollectHoneycombFromFlowerInfo_Private_Boolean_HarvestFlowerInfo_byref_Dictionary_2_UInt32_List_1_ItemData_byref_List_1_ItemData_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<BeekeepingManager>.NativeClassPtr, 100669503);
+			BeekeepingManager.NativeMethodInfoPtr__ctor_Public_Void_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<BeekeepingManager>.NativeClassPtr, 100669504);
+		}
+
+		// Token: 0x17000D1C RID: 3356
+		// (get) Token: 0x060029D8 RID: 10712 RVA: 0x0014D30C File Offset: 0x0014B50C
+		public unsafe override SingletonLifetime SingletonLifetime
+		{
+			[CallerCount(12)]
+			[CachedScanResults(RefRangeStart = 31006, RefRangeEnd = 31018, XrefRangeStart = 31006, XrefRangeEnd = 31018, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(BeekeepingManager.NativeMethodInfoPtr_get_SingletonLifetime_Public_Virtual_get_SingletonLifetime_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+		}
+
+		// Token: 0x17000D1D RID: 3357
+		// (get) Token: 0x060029D9 RID: 10713 RVA: 0x0014D348 File Offset: 0x0014B548
+		public unsafe BeekeepingLevel Level
+		{
+			[CallerCount(5)]
+			[CachedScanResults(RefRangeStart = 93808, RefRangeEnd = 93813, XrefRangeStart = 93802, XrefRangeEnd = 93808, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(BeekeepingManager.NativeMethodInfoPtr_get_Level_Public_get_BeekeepingLevel_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				return *IL2CPP.il2cpp_object_unbox(intPtr);
+			}
+		}
+
+		// Token: 0x17000D1E RID: 3358
+		// (get) Token: 0x060029DA RID: 10714 RVA: 0x0014D384 File Offset: 0x0014B584
+		public unsafe List<uint> AccessableGroupList
+		{
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93813, XrefRangeEnd = 93832, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(BeekeepingManager.NativeMethodInfoPtr_get_AccessableGroupList_Public_get_List_1_UInt32_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				IntPtr intPtr3 = intPtr;
+				return (intPtr3 != 0) ? Il2CppObjectPool.Get<List<uint>>(intPtr3) : null;
+			}
+		}
+
+		// Token: 0x17000D1F RID: 3359
+		// (get) Token: 0x060029DB RID: 10715 RVA: 0x0014D3C4 File Offset: 0x0014B5C4
+		public unsafe BeekeepingSetting BS
+		{
+			[CallerCount(5)]
+			[CachedScanResults(RefRangeStart = 93836, RefRangeEnd = 93841, XrefRangeStart = 93832, XrefRangeEnd = 93836, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(BeekeepingManager.NativeMethodInfoPtr_get_BS_Private_get_BeekeepingSetting_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				IntPtr intPtr3 = intPtr;
+				return (intPtr3 != 0) ? Il2CppObjectPool.Get<BeekeepingSetting>(intPtr3) : null;
+			}
+		}
+
+		// Token: 0x17000D20 RID: 3360
+		// (get) Token: 0x060029DC RID: 10716 RVA: 0x0014D404 File Offset: 0x0014B604
+		public unsafe GameController GC
+		{
+			[CallerCount(1)]
+			[CachedScanResults(RefRangeStart = 93844, RefRangeEnd = 93845, XrefRangeStart = 93841, XrefRangeEnd = 93844, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(BeekeepingManager.NativeMethodInfoPtr_get_GC_Private_get_GameController_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				IntPtr intPtr3 = intPtr;
+				return (intPtr3 != 0) ? Il2CppObjectPool.Get<GameController>(intPtr3) : null;
+			}
+		}
+
+		// Token: 0x17000D21 RID: 3361
+		// (get) Token: 0x060029DD RID: 10717 RVA: 0x0014D444 File Offset: 0x0014B644
+		public unsafe FieldManager FM
+		{
+			[CallerCount(2)]
+			[CachedScanResults(RefRangeStart = 93848, RefRangeEnd = 93850, XrefRangeStart = 93845, XrefRangeEnd = 93848, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(BeekeepingManager.NativeMethodInfoPtr_get_FM_Private_get_FieldManager_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				IntPtr intPtr3 = intPtr;
+				return (intPtr3 != 0) ? Il2CppObjectPool.Get<FieldManager>(intPtr3) : null;
+			}
+		}
+
+		// Token: 0x17000D22 RID: 3362
+		// (get) Token: 0x060029DE RID: 10718 RVA: 0x0014D484 File Offset: 0x0014B684
+		public unsafe MasterDataManager MDM
+		{
+			[CallerCount(2)]
+			[CachedScanResults(RefRangeStart = 93853, RefRangeEnd = 93855, XrefRangeStart = 93850, XrefRangeEnd = 93853, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			get
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(BeekeepingManager.NativeMethodInfoPtr_get_MDM_Private_get_MasterDataManager_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+				IntPtr intPtr3 = intPtr;
+				return (intPtr3 != 0) ? Il2CppObjectPool.Get<MasterDataManager>(intPtr3) : null;
+			}
+		}
+
+		// Token: 0x060029DF RID: 10719 RVA: 0x0014D4C4 File Offset: 0x0014B6C4
+		[CallerCount(1)]
+		[CachedScanResults(RefRangeStart = 93859, RefRangeEnd = 93860, XrefRangeStart = 93855, XrefRangeEnd = 93859, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+		public unsafe BeekeepingManager.SaveData ToSaveData()
+		{
+			IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+			IntPtr* ptr = null;
+			IntPtr intPtr2;
+			IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(BeekeepingManager.NativeMethodInfoPtr_ToSaveData_Public_SaveData_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+			Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			IntPtr intPtr3 = intPtr;
+			return (intPtr3 != 0) ? Il2CppObjectPool.Get<BeekeepingManager.SaveData>(intPtr3) : null;
+		}
+
+		// Token: 0x060029E0 RID: 10720 RVA: 0x0014D504 File Offset: 0x0014B704
+		[CallerCount(1)]
+		[CachedScanResults(RefRangeStart = 93879, RefRangeEnd = 93880, XrefRangeStart = 93860, XrefRangeEnd = 93879, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+		public unsafe void FromSaveData(BeekeepingManager.SaveData saveData)
+		{
+			IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+			IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+			*ptr = IL2CPP.Il2CppObjectBaseToPtr(saveData);
+			IntPtr intPtr2;
+			IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(BeekeepingManager.NativeMethodInfoPtr_FromSaveData_Public_Void_SaveData_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+			Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+		}
+
+		// Token: 0x060029E1 RID: 10721 RVA: 0x0014D548 File Offset: 0x0014B748
+		[CallerCount(2)]
+		[CachedScanResults(RefRangeStart = 93904, RefRangeEnd = 93906, XrefRangeStart = 93880, XrefRangeEnd = 93904, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+		public unsafe bool IsAccesableGroupId(uint groupId)
+		{
+			IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+			IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+			*ptr = ref groupId;
+			IntPtr intPtr2;
+			IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(BeekeepingManager.NativeMethodInfoPtr_IsAccesableGroupId_Public_Boolean_UInt32_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+			Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			return *IL2CPP.il2cpp_object_unbox(intPtr);
+		}
+
+		// Token: 0x060029E2 RID: 10722 RVA: 0x0014D594 File Offset: 0x0014B794
+		[CallerCount(0)]
+		[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93906, XrefRangeEnd = 93907, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+		public unsafe bool IsHoneycombCollectable()
+		{
+			IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+			IntPtr* ptr = null;
+			IntPtr intPtr2;
+			IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(BeekeepingManager.NativeMethodInfoPtr_IsHoneycombCollectable_Public_Boolean_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+			Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			return *IL2CPP.il2cpp_object_unbox(intPtr);
+		}
+
+		// Token: 0x060029E3 RID: 10723 RVA: 0x0014D5D0 File Offset: 0x0014B7D0
+		[CallerCount(1)]
+		[CachedScanResults(RefRangeStart = 93929, RefRangeEnd = 93930, XrefRangeStart = 93907, XrefRangeEnd = 93929, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+		public unsafe void OnChangeField()
+		{
+			IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+			IntPtr* ptr = null;
+			IntPtr intPtr2;
+			IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(BeekeepingManager.NativeMethodInfoPtr_OnChangeField_Public_Void_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+			Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+		}
+
+		// Token: 0x060029E4 RID: 10724 RVA: 0x0014D604 File Offset: 0x0014B804
+		[CallerCount(1)]
+		[CachedScanResults(RefRangeStart = 94017, RefRangeEnd = 94018, XrefRangeStart = 93930, XrefRangeEnd = 94017, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+		public unsafe void CollectHoneycomb()
+		{
+			IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+			IntPtr* ptr = null;
+			IntPtr intPtr2;
+			IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(BeekeepingManager.NativeMethodInfoPtr_CollectHoneycomb_Public_Void_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+			Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+		}
+
+		// Token: 0x060029E5 RID: 10725 RVA: 0x0014D638 File Offset: 0x0014B838
+		[CallerCount(1)]
+		[CachedScanResults(RefRangeStart = 94021, RefRangeEnd = 94022, XrefRangeStart = 94018, XrefRangeEnd = 94021, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+		public unsafe void AddCollectableFlowerInfo(BeekeepingManager.HarvestFlowerInfo info)
+		{
+			IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+			IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+			*ptr = ref info;
+			IntPtr intPtr2;
+			IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(BeekeepingManager.NativeMethodInfoPtr_AddCollectableFlowerInfo_Public_Void_HarvestFlowerInfo_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+			Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+		}
+
+		// Token: 0x060029E6 RID: 10726 RVA: 0x0014D678 File Offset: 0x0014B878
+		[CallerCount(1)]
+		[CachedScanResults(RefRangeStart = 94073, RefRangeEnd = 94074, XrefRangeStart = 94022, XrefRangeEnd = 94073, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+		public unsafe bool TryCollectHoneycombFromFlowerInfo(BeekeepingManager.HarvestFlowerInfo info, ref Dictionary<uint, List<ItemData>> itemDataDic, ref List<ItemData> extras)
+		{
+			IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+			IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)3) * (UIntPtr)sizeof(IntPtr))];
+			*ptr = ref info;
+			ref IntPtr ptr2 = ref ptr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr)) / (UIntPtr)sizeof(IntPtr)];
+			IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtr(itemDataDic);
+			ptr2 = &intPtr;
+			ref IntPtr ptr3 = ref ptr[checked(unchecked((UIntPtr)2) * (UIntPtr)sizeof(IntPtr)) / (UIntPtr)sizeof(IntPtr)];
+			IntPtr intPtr2 = IL2CPP.Il2CppObjectBaseToPtr(extras);
+			ptr3 = &intPtr2;
+			IntPtr intPtr4;
+			IntPtr intPtr3 = IL2CPP.il2cpp_runtime_invoke(BeekeepingManager.NativeMethodInfoPtr_TryCollectHoneycombFromFlowerInfo_Private_Boolean_HarvestFlowerInfo_byref_Dictionary_2_UInt32_List_1_ItemData_byref_List_1_ItemData_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr4);
+			Il2CppException.RaiseExceptionIfNecessary(intPtr4);
+			IntPtr intPtr5 = intPtr;
+			itemDataDic = ((intPtr5 == 0) ? null : new Dictionary<uint, List<ItemData>>(intPtr5));
+			IntPtr intPtr6 = intPtr2;
+			extras = ((intPtr6 == 0) ? null : new List<ItemData>(intPtr6));
+			return *IL2CPP.il2cpp_object_unbox(intPtr3);
+		}
+
+		// Token: 0x060029E7 RID: 10727 RVA: 0x0014D714 File Offset: 0x0014B914
+		[CallerCount(0)]
+		[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 94074, XrefRangeEnd = 94098, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+		public unsafe BeekeepingManager() : this(IL2CPP.il2cpp_object_new(Il2CppClassPointerStore<BeekeepingManager>.NativeClassPtr))
+		{
+			IntPtr* ptr = null;
+			IntPtr intPtr2;
+			IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(BeekeepingManager.NativeMethodInfoPtr__ctor_Public_Void_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+			Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+		}
+
+		// Token: 0x060029E8 RID: 10728 RVA: 0x0001409B File Offset: 0x0001229B
+		public BeekeepingManager(IntPtr pointer) : base(pointer)
+		{
+		}
+
+		// Token: 0x17000D19 RID: 3353
+		// (get) Token: 0x060029E9 RID: 10729 RVA: 0x0014D750 File Offset: 0x0014B950
+		// (set) Token: 0x060029EA RID: 10730 RVA: 0x000140A4 File Offset: 0x000122A4
+		public unsafe List<BeekeepingManager.HarvestFlowerInfo> m_HarvestFlowerInfos
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(BeekeepingManager.NativeFieldInfoPtr_m_HarvestFlowerInfos);
+				IntPtr intPtr2 = *intPtr;
+				return (intPtr2 != 0) ? Il2CppObjectPool.Get<List<BeekeepingManager.HarvestFlowerInfo>>(intPtr2) : null;
+			}
+			set
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IL2CPP.il2cpp_gc_wbarrier_set_field(intPtr, intPtr + (IntPtr)IL2CPP.il2cpp_field_get_offset(BeekeepingManager.NativeFieldInfoPtr_m_HarvestFlowerInfos), IL2CPP.Il2CppObjectBaseToPtr(value));
+			}
+		}
+
+		// Token: 0x17000D1A RID: 3354
+		// (get) Token: 0x060029EB RID: 10731 RVA: 0x0014D780 File Offset: 0x0014B980
+		// (set) Token: 0x060029EC RID: 10732 RVA: 0x000140C3 File Offset: 0x000122C3
+		public unsafe Dictionary<uint, List<ItemData>> itemDataDic
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(BeekeepingManager.NativeFieldInfoPtr_itemDataDic);
+				IntPtr intPtr2 = *intPtr;
+				return (intPtr2 != 0) ? Il2CppObjectPool.Get<Dictionary<uint, List<ItemData>>>(intPtr2) : null;
+			}
+			set
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IL2CPP.il2cpp_gc_wbarrier_set_field(intPtr, intPtr + (IntPtr)IL2CPP.il2cpp_field_get_offset(BeekeepingManager.NativeFieldInfoPtr_itemDataDic), IL2CPP.Il2CppObjectBaseToPtr(value));
+			}
+		}
+
+		// Token: 0x17000D1B RID: 3355
+		// (get) Token: 0x060029ED RID: 10733 RVA: 0x0014D7B0 File Offset: 0x0014B9B0
+		// (set) Token: 0x060029EE RID: 10734 RVA: 0x000140E2 File Offset: 0x000122E2
+		public unsafe List<ItemData> extraItemDatas
+		{
+			get
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(BeekeepingManager.NativeFieldInfoPtr_extraItemDatas);
+				IntPtr intPtr2 = *intPtr;
+				return (intPtr2 != 0) ? Il2CppObjectPool.Get<List<ItemData>>(intPtr2) : null;
+			}
+			set
+			{
+				IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IL2CPP.il2cpp_gc_wbarrier_set_field(intPtr, intPtr + (IntPtr)IL2CPP.il2cpp_field_get_offset(BeekeepingManager.NativeFieldInfoPtr_extraItemDatas), IL2CPP.Il2CppObjectBaseToPtr(value));
+			}
+		}
+
+		// Token: 0x04025319 RID: 152345
+		private static readonly IntPtr NativeFieldInfoPtr_m_HarvestFlowerInfos;
+
+		// Token: 0x0402531A RID: 152346
+		private static readonly IntPtr NativeFieldInfoPtr_itemDataDic;
+
+		// Token: 0x0402531B RID: 152347
+		private static readonly IntPtr NativeFieldInfoPtr_extraItemDatas;
+
+		// Token: 0x0402531C RID: 152348
+		private static readonly IntPtr NativeMethodInfoPtr_get_SingletonLifetime_Public_Virtual_get_SingletonLifetime_0;
+
+		// Token: 0x0402531D RID: 152349
+		private static readonly IntPtr NativeMethodInfoPtr_get_Level_Public_get_BeekeepingLevel_0;
+
+		// Token: 0x0402531E RID: 152350
+		private static readonly IntPtr NativeMethodInfoPtr_get_AccessableGroupList_Public_get_List_1_UInt32_0;
+
+		// Token: 0x0402531F RID: 152351
+		private static readonly IntPtr NativeMethodInfoPtr_get_BS_Private_get_BeekeepingSetting_0;
+
+		// Token: 0x04025320 RID: 152352
+		private static readonly IntPtr NativeMethodInfoPtr_get_GC_Private_get_GameController_0;
+
+		// Token: 0x04025321 RID: 152353
+		private static readonly IntPtr NativeMethodInfoPtr_get_FM_Private_get_FieldManager_0;
+
+		// Token: 0x04025322 RID: 152354
+		private static readonly IntPtr NativeMethodInfoPtr_get_MDM_Private_get_MasterDataManager_0;
+
+		// Token: 0x04025323 RID: 152355
+		private static readonly IntPtr NativeMethodInfoPtr_ToSaveData_Public_SaveData_0;
+
+		// Token: 0x04025324 RID: 152356
+		private static readonly IntPtr NativeMethodInfoPtr_FromSaveData_Public_Void_SaveData_0;
+
+		// Token: 0x04025325 RID: 152357
+		private static readonly IntPtr NativeMethodInfoPtr_IsAccesableGroupId_Public_Boolean_UInt32_0;
+
+		// Token: 0x04025326 RID: 152358
+		private static readonly IntPtr NativeMethodInfoPtr_IsHoneycombCollectable_Public_Boolean_0;
+
+		// Token: 0x04025327 RID: 152359
+		private static readonly IntPtr NativeMethodInfoPtr_OnChangeField_Public_Void_0;
+
+		// Token: 0x04025328 RID: 152360
+		private static readonly IntPtr NativeMethodInfoPtr_CollectHoneycomb_Public_Void_0;
+
+		// Token: 0x04025329 RID: 152361
+		private static readonly IntPtr NativeMethodInfoPtr_AddCollectableFlowerInfo_Public_Void_HarvestFlowerInfo_0;
+
+		// Token: 0x0402532A RID: 152362
+		private static readonly IntPtr NativeMethodInfoPtr_TryCollectHoneycombFromFlowerInfo_Private_Boolean_HarvestFlowerInfo_byref_Dictionary_2_UInt32_List_1_ItemData_byref_List_1_ItemData_0;
+
+		// Token: 0x0402532B RID: 152363
+		private static readonly IntPtr NativeMethodInfoPtr__ctor_Public_Void_0;
+
+		// Token: 0x020012D9 RID: 4825
+		[Serializable]
+		[StructLayout(2)]
+		public struct HarvestFlowerInfo
+		{
+			// Token: 0x06011883 RID: 71811 RVA: 0x00476748 File Offset: 0x00474948
+			// Note: this type is marked as 'beforefieldinit'.
+			static HarvestFlowerInfo()
+			{
+				Il2CppClassPointerStore<BeekeepingManager.HarvestFlowerInfo>.NativeClassPtr = IL2CPP.GetIl2CppNestedType(Il2CppClassPointerStore<BeekeepingManager>.NativeClassPtr, "HarvestFlowerInfo");
+				IL2CPP.il2cpp_runtime_class_init(Il2CppClassPointerStore<BeekeepingManager.HarvestFlowerInfo>.NativeClassPtr);
+				BeekeepingManager.HarvestFlowerInfo.NativeFieldInfoPtr_FlowerId = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<BeekeepingManager.HarvestFlowerInfo>.NativeClassPtr, "FlowerId");
+				BeekeepingManager.HarvestFlowerInfo.NativeFieldInfoPtr_QualityValue = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<BeekeepingManager.HarvestFlowerInfo>.NativeClassPtr, "QualityValue");
+				BeekeepingManager.HarvestFlowerInfo.NativeFieldInfoPtr_RandomValue = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<BeekeepingManager.HarvestFlowerInfo>.NativeClassPtr, "RandomValue");
+				BeekeepingManager.HarvestFlowerInfo.NativeMethodInfoPtr__ctor_Public_Void_UInt32_Int32_Byte_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<BeekeepingManager.HarvestFlowerInfo>.NativeClassPtr, 100669505);
+			}
+
+			// Token: 0x06011884 RID: 71812 RVA: 0x004767C4 File Offset: 0x004749C4
+			[CallerCount(2)]
+			[CachedScanResults(RefRangeStart = 93737, RefRangeEnd = 93739, XrefRangeStart = 93737, XrefRangeEnd = 93737, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			public unsafe HarvestFlowerInfo(uint flowerId, int qualityValue, byte randomValue)
+			{
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)3) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = ref flowerId;
+				ptr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr)) / (UIntPtr)sizeof(IntPtr)] = ref qualityValue;
+				ptr[checked(unchecked((UIntPtr)2) * (UIntPtr)sizeof(IntPtr)) / (UIntPtr)sizeof(IntPtr)] = ref randomValue;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(BeekeepingManager.HarvestFlowerInfo.NativeMethodInfoPtr__ctor_Public_Void_UInt32_Int32_Byte_0, ref this, (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+
+			// Token: 0x06011885 RID: 71813 RVA: 0x0007F2C6 File Offset: 0x0007D4C6
+			public Object BoxIl2CppObject()
+			{
+				return new Object(IL2CPP.il2cpp_value_box(Il2CppClassPointerStore<BeekeepingManager.HarvestFlowerInfo>.NativeClassPtr, ref this));
+			}
+
+			// Token: 0x0402FD12 RID: 195858
+			private static readonly IntPtr NativeFieldInfoPtr_FlowerId;
+
+			// Token: 0x0402FD13 RID: 195859
+			private static readonly IntPtr NativeFieldInfoPtr_QualityValue;
+
+			// Token: 0x0402FD14 RID: 195860
+			private static readonly IntPtr NativeFieldInfoPtr_RandomValue;
+
+			// Token: 0x0402FD15 RID: 195861
+			private static readonly IntPtr NativeMethodInfoPtr__ctor_Public_Void_UInt32_Int32_Byte_0;
+
+			// Token: 0x0402FD16 RID: 195862
+			[FieldOffset(0)]
+			public uint FlowerId;
+
+			// Token: 0x0402FD17 RID: 195863
+			[FieldOffset(4)]
+			public int QualityValue;
+
+			// Token: 0x0402FD18 RID: 195864
+			[FieldOffset(8)]
+			public byte RandomValue;
+		}
+
+		// Token: 0x020012DA RID: 4826
+		[Serializable]
+		public class SaveData : Object
+		{
+			// Token: 0x06011886 RID: 71814 RVA: 0x00476814 File Offset: 0x00474A14
+			// Note: this type is marked as 'beforefieldinit'.
+			static SaveData()
+			{
+				Il2CppClassPointerStore<BeekeepingManager.SaveData>.NativeClassPtr = IL2CPP.GetIl2CppNestedType(Il2CppClassPointerStore<BeekeepingManager>.NativeClassPtr, "SaveData");
+				IL2CPP.il2cpp_runtime_class_init(Il2CppClassPointerStore<BeekeepingManager.SaveData>.NativeClassPtr);
+				BeekeepingManager.SaveData.NativeFieldInfoPtr_HarvestFlowerInfos = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<BeekeepingManager.SaveData>.NativeClassPtr, "HarvestFlowerInfos");
+				BeekeepingManager.SaveData.NativeMethodInfoPtr__ctor_Public_Void_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<BeekeepingManager.SaveData>.NativeClassPtr, 100669506);
+				BeekeepingManager.SaveData.NativeMethodInfoPtr__ctor_Public_Void_SaveData_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<BeekeepingManager.SaveData>.NativeClassPtr, 100669507);
+				BeekeepingManager.SaveData.NativeMethodInfoPtr__ctor_Public_Void_List_1_HarvestFlowerInfo_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<BeekeepingManager.SaveData>.NativeClassPtr, 100669508);
+			}
+
+			// Token: 0x06011887 RID: 71815 RVA: 0x00476890 File Offset: 0x00474A90
+			[CallerCount(0)]
+			[CachedScanResults(RefRangeStart = 0, RefRangeEnd = 0, XrefRangeStart = 93739, XrefRangeEnd = 93747, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			public unsafe SaveData() : this(IL2CPP.il2cpp_object_new(Il2CppClassPointerStore<BeekeepingManager.SaveData>.NativeClassPtr))
+			{
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(BeekeepingManager.SaveData.NativeMethodInfoPtr__ctor_Public_Void_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+
+			// Token: 0x06011888 RID: 71816 RVA: 0x004768CC File Offset: 0x00474ACC
+			[CallerCount(2)]
+			[CachedScanResults(RefRangeStart = 93773, RefRangeEnd = 93775, XrefRangeStart = 93747, XrefRangeEnd = 93773, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			public unsafe SaveData(BeekeepingManager.SaveData saveData) : this(IL2CPP.il2cpp_object_new(Il2CppClassPointerStore<BeekeepingManager.SaveData>.NativeClassPtr))
+			{
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = IL2CPP.Il2CppObjectBaseToPtr(saveData);
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(BeekeepingManager.SaveData.NativeMethodInfoPtr__ctor_Public_Void_SaveData_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+
+			// Token: 0x06011889 RID: 71817 RVA: 0x00476918 File Offset: 0x00474B18
+			[CallerCount(1)]
+			[CachedScanResults(RefRangeStart = 93801, RefRangeEnd = 93802, XrefRangeStart = 93775, XrefRangeEnd = 93801, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			public unsafe SaveData(List<BeekeepingManager.HarvestFlowerInfo> infos) : this(IL2CPP.il2cpp_object_new(Il2CppClassPointerStore<BeekeepingManager.SaveData>.NativeClassPtr))
+			{
+				IntPtr* ptr = stackalloc IntPtr[checked(unchecked((UIntPtr)1) * (UIntPtr)sizeof(IntPtr))];
+				*ptr = IL2CPP.Il2CppObjectBaseToPtr(infos);
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(BeekeepingManager.SaveData.NativeMethodInfoPtr__ctor_Public_Void_List_1_HarvestFlowerInfo_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+
+			// Token: 0x0601188A RID: 71818 RVA: 0x0007F2D8 File Offset: 0x0007D4D8
+			public SaveData(IntPtr pointer) : base(pointer)
+			{
+			}
+
+			// Token: 0x17005714 RID: 22292
+			// (get) Token: 0x0601188B RID: 71819 RVA: 0x00476964 File Offset: 0x00474B64
+			// (set) Token: 0x0601188C RID: 71820 RVA: 0x0007F2E1 File Offset: 0x0007D4E1
+			public unsafe List<BeekeepingManager.HarvestFlowerInfo> HarvestFlowerInfos
+			{
+				get
+				{
+					IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this) + (IntPtr)IL2CPP.il2cpp_field_get_offset(BeekeepingManager.SaveData.NativeFieldInfoPtr_HarvestFlowerInfos);
+					IntPtr intPtr2 = *intPtr;
+					return (intPtr2 != 0) ? Il2CppObjectPool.Get<List<BeekeepingManager.HarvestFlowerInfo>>(intPtr2) : null;
+				}
+				set
+				{
+					IntPtr intPtr = IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+					IL2CPP.il2cpp_gc_wbarrier_set_field(intPtr, intPtr + (IntPtr)IL2CPP.il2cpp_field_get_offset(BeekeepingManager.SaveData.NativeFieldInfoPtr_HarvestFlowerInfos), IL2CPP.Il2CppObjectBaseToPtr(value));
+				}
+			}
+
+			// Token: 0x0402FD19 RID: 195865
+			private static readonly IntPtr NativeFieldInfoPtr_HarvestFlowerInfos;
+
+			// Token: 0x0402FD1A RID: 195866
+			private static readonly IntPtr NativeMethodInfoPtr__ctor_Public_Void_0;
+
+			// Token: 0x0402FD1B RID: 195867
+			private static readonly IntPtr NativeMethodInfoPtr__ctor_Public_Void_SaveData_0;
+
+			// Token: 0x0402FD1C RID: 195868
+			private static readonly IntPtr NativeMethodInfoPtr__ctor_Public_Void_List_1_HarvestFlowerInfo_0;
+		}
+
+		// Token: 0x020012DB RID: 4827
+		[ObfuscatedName("BokuMono.BeekeepingManager+<>c")]
+		[Serializable]
+		public sealed class __c : Object
+		{
+			// Token: 0x0601188D RID: 71821 RVA: 0x00476994 File Offset: 0x00474B94
+			// Note: this type is marked as 'beforefieldinit'.
+			static __c()
+			{
+				Il2CppClassPointerStore<BeekeepingManager.__c>.NativeClassPtr = IL2CPP.GetIl2CppNestedType(Il2CppClassPointerStore<BeekeepingManager>.NativeClassPtr, "<>c");
+				IL2CPP.il2cpp_runtime_class_init(Il2CppClassPointerStore<BeekeepingManager.__c>.NativeClassPtr);
+				BeekeepingManager.__c.NativeFieldInfoPtr___9 = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<BeekeepingManager.__c>.NativeClassPtr, "<>9");
+				BeekeepingManager.__c.NativeFieldInfoPtr___9__24_0 = IL2CPP.GetIl2CppField(Il2CppClassPointerStore<BeekeepingManager.__c>.NativeClassPtr, "<>9__24_0");
+				BeekeepingManager.__c.NativeMethodInfoPtr__ctor_Public_Void_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<BeekeepingManager.__c>.NativeClassPtr, 100669510);
+				BeekeepingManager.__c.NativeMethodInfoPtr__CollectHoneycomb_b__24_0_Internal_Void_0 = IL2CPP.GetIl2CppMethodByToken(Il2CppClassPointerStore<BeekeepingManager.__c>.NativeClassPtr, 100669511);
+			}
+
+			// Token: 0x0601188E RID: 71822 RVA: 0x00476A10 File Offset: 0x00474C10
+			[CallerCount(3088)]
+			[CachedScanResults(RefRangeStart = 20040, RefRangeEnd = 23128, XrefRangeStart = 20040, XrefRangeEnd = 23128, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			public unsafe __c() : this(IL2CPP.il2cpp_object_new(Il2CppClassPointerStore<BeekeepingManager.__c>.NativeClassPtr))
+			{
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(BeekeepingManager.__c.NativeMethodInfoPtr__ctor_Public_Void_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+
+			// Token: 0x0601188F RID: 71823 RVA: 0x00476A4C File Offset: 0x00474C4C
+			[CallerCount(19666)]
+			[CachedScanResults(RefRangeStart = 181, RefRangeEnd = 19847, XrefRangeStart = 181, XrefRangeEnd = 19847, MetadataInitTokenRva = 0L, MetadataInitFlagRva = 0L)]
+			public unsafe void _CollectHoneycomb_b__24_0()
+			{
+				IL2CPP.Il2CppObjectBaseToPtrNotNull(this);
+				IntPtr* ptr = null;
+				IntPtr intPtr2;
+				IntPtr intPtr = IL2CPP.il2cpp_runtime_invoke(BeekeepingManager.__c.NativeMethodInfoPtr__CollectHoneycomb_b__24_0_Internal_Void_0, IL2CPP.Il2CppObjectBaseToPtrNotNull(this), (void**)ptr, ref intPtr2);
+				Il2CppException.RaiseExceptionIfNecessary(intPtr2);
+			}
+
+			// Token: 0x06011890 RID: 71824 RVA: 0x0007F300 File Offset: 0x0007D500
+			public __c(IntPtr pointer) : base(pointer)
+			{
+			}
+
+			// Token: 0x17005715 RID: 22293
+			// (get) Token: 0x06011891 RID: 71825 RVA: 0x00476A80 File Offset: 0x00474C80
+			// (set) Token: 0x06011892 RID: 71826 RVA: 0x0007F309 File Offset: 0x0007D509
+			public unsafe static BeekeepingManager.__c __9
+			{
+				get
+				{
+					IntPtr intPtr;
+					IL2CPP.il2cpp_field_static_get_value(BeekeepingManager.__c.NativeFieldInfoPtr___9, (void*)(&intPtr));
+					IntPtr intPtr2 = intPtr;
+					return (intPtr2 != 0) ? Il2CppObjectPool.Get<BeekeepingManager.__c>(intPtr2) : null;
+				}
+				set
+				{
+					IL2CPP.il2cpp_field_static_set_value(BeekeepingManager.__c.NativeFieldInfoPtr___9, IL2CPP.Il2CppObjectBaseToPtr(value));
+				}
+			}
+
+			// Token: 0x17005716 RID: 22294
+			// (get) Token: 0x06011893 RID: 71827 RVA: 0x00476AA8 File Offset: 0x00474CA8
+			// (set) Token: 0x06011894 RID: 71828 RVA: 0x0007F31B File Offset: 0x0007D51B
+			public unsafe static Action __9__24_0
+			{
+				get
+				{
+					IntPtr intPtr;
+					IL2CPP.il2cpp_field_static_get_value(BeekeepingManager.__c.NativeFieldInfoPtr___9__24_0, (void*)(&intPtr));
+					IntPtr intPtr2 = intPtr;
+					return (intPtr2 != 0) ? Il2CppObjectPool.Get<Action>(intPtr2) : null;
+				}
+				set
+				{
+					IL2CPP.il2cpp_field_static_set_value(BeekeepingManager.__c.NativeFieldInfoPtr___9__24_0, IL2CPP.Il2CppObjectBaseToPtr(value));
+				}
+			}
+
+			// Token: 0x0402FD1D RID: 195869
+			private static readonly IntPtr NativeFieldInfoPtr___9;
+
+			// Token: 0x0402FD1E RID: 195870
+			private static readonly IntPtr NativeFieldInfoPtr___9__24_0;
+
+			// Token: 0x0402FD1F RID: 195871
+			private static readonly IntPtr NativeMethodInfoPtr__ctor_Public_Void_0;
+
+			// Token: 0x0402FD20 RID: 195872
+			private static readonly IntPtr NativeMethodInfoPtr__CollectHoneycomb_b__24_0_Internal_Void_0;
+		}
+	}
+}
