@@ -12,12 +12,8 @@ public class BeekeepingManagerPatch
     [HarmonyPrefix]
     static void PrefixAddCollectableFlowerInfo(ref BeekeepingManager.HarvestFlowerInfo info)
     {
-        // It's royal when random value is greater than 32.
-        if (info.RandomValue > 32)
-        {
-            HoneyPlugin.Log.LogDebug($"Modify RandomValue : {info.RandomValue} -> 1.");
-            info.RandomValue = 1;
-        }
+        HoneyPlugin.Log.LogDebug($"Modify RandomValue : {info.RandomValue} -> 1.");
+        info.RandomValue = 1;
     }
     
 
